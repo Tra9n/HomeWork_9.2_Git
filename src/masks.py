@@ -1,14 +1,15 @@
-def get_mask_card_number(card_number: str) -> str:
-    """Функция принимает на вход номер карты и возвращает ее маску"""
-    return f"{card_number[:4]} {card_number[4:6]}** **** {card_number[-4:]}"
+from typing import Union
 
 
-get_mask_card_number(input())
+def get_mask_card_number(number_card: Union[str]) -> Union[str]:
+    """Функцию маскировки номера банковской карты"""
+    card_number_str = number_card.replace(" ", "")
+    return card_number_str[:4] + " " + card_number_str[4:6] + "** **** " + card_number_str[-4:]
 
 
-def get_mask_account(account_number: str) -> str:
-    """Функция принимает на вход номер счета и возвращает его маску"""
-    return f"**{account_number[-4:]}"
+def get_mask_account(number_chek: Union[str]) -> Union[str]:
+    """Функцию маскировки номера банковского счета"""
+    chek_number_str = number_chek.replace(" ", "")
+    return "**" + chek_number_str[-4:]
 
 
-get_mask_account(input())
