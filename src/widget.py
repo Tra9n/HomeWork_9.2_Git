@@ -17,3 +17,4 @@ def get_data(time_card: str) -> str:
 if __name__ == '__main__':
     print(mask_account_card('MasterCard 7158300734726758'))
     print(mask_account_card('Счет 64686473678894779589'))
+

@@ -11,3 +11,4 @@ def get_mask_account(number_chek: Union[str]) -> Union[str]:
     """Функцию маскировки номера банковского счета"""
     chek_number_str = number_chek.replace(" ", "")
     return "**" + chek_number_str[-4:]
+
