@@ -1,18 +1,18 @@
 from src.masks import get_mask_account, get_mask_card_number
 
 
-def mask_account_card(card_namber: str) -> str:
+def mask_account_card(card_number: str) -> str:
     """
     Функция которая умеет обрабатывать информацию как о картах,
      так и о счетах.
     """
-    if card_namber[-20:].isdigit():
-        return f"Счет {get_mask_account(card_namber[-20:])}"
+    if card_number[-20:].isdigit():
+        return f"Счет {get_mask_account(card_number[-20:])}"
     else:
-        return f"{card_namber[:-16]} {get_mask_card_number(card_namber[-16:])}"
+        return f"{card_number[:-16]} {get_mask_card_number(card_number[-16:])}"
 
 
-def get_data(time_card: str) -> str:
+def get_date(time_card: str) -> str:
     """
     Принимает системную дату/время, возвращает
     дату в формате ДД.ММ.ГГГГ
